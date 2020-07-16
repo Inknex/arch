@@ -1,0 +1,11 @@
+pm.sendRequest({
+    url: "http://135.181.39.185/otusapp/vkuzmin/health",
+    header: {
+            host: "arch.homework"
+        }
+    }, function (err, response) {
+
+    pm.test("Body matches string", function () {
+        pm.expect(response.text()).to.include('{"status": "OK"}');
+    });
+});
